@@ -1,0 +1,44 @@
+body{ 
+    margin:0;
+    background-color: #121212;
+    user-select: none;
+    font-family: monospace;
+    overflow-x: hidden;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1{
+    font-size: 10vw;
+    margin: auto;
+}
+
+.homeButtonDiv{
+    height:50vh;
+    width:100vw;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.titleDiv{
+    animation: fadeIn 5s;
+    color: #1AACEA;
+    height: 50vh;
+    padding-left:10px;
+    width: 100vw;
+}
