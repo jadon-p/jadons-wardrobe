@@ -3,11 +3,9 @@ function loadContent(contentType){
     switch (contentType) {
         case "home":
             loadTitle();
-            loadHomeButtons();
             loadMotive();
             break;
         case "products":
-            loadTitle();
             break;
         case "contact":
             break;
@@ -24,27 +22,12 @@ function generateMotiveText(){
     return line1 + line2 + line3 + line4;
 }
 
-function loadHomeButtons(){
-    var buttonDiv = document.createElement("div");
-    buttonDiv.id = "homeButtonDiv";
-    buttonDiv.className = "homeButtonDiv"
-
-    var center = document.createElement("div");
-    center.className = "center";
-
-    var motiveButton = document.createElement("a");
-    motiveButton.innerHTML = "WHY DOES THIS EXIST?";
-    motiveButton.href = "javascript:scrollToElement(\'motive\',50)";
-    motiveButton.className = "motiveBtn";
-
-    buttonDiv.append(center);
-    center.append(motiveButton);
-
-    document.getElementById('app').appendChild(buttonDiv);
-}
-
 function loadMotive(){
     /*Title */
+    var motive_container = document.createElement("div");
+    motive_container.id = "motive-container";
+    motive_container.className = "motive-container";
+
     var motiveTitleDiv = document.createElement("div");
     motiveTitleDiv.id = "motive";
     motiveTitleDiv.className = "motiveTitleDiv";
@@ -55,9 +38,6 @@ function loadMotive(){
     motiveTitleDiv.append(motiveTitle);
 
     /*Content*/
-    var motiveDiv = document.createElement("div");
-    motiveDiv.className = "motiveDiv";
-    
     var card = document.createElement("div");
     card.className = "profile-card";
 
@@ -77,8 +57,8 @@ function loadMotive(){
     card.append(card_img);
     card.append(card_container);
     motiveTextDiv.append(motiveText);
-    motiveDiv.append(card);
-    motiveDiv.append(motiveTextDiv);
+    motive_container.append(card);
+    motive_container.append(motiveTextDiv);
 
     /*Footer*/
     var motiveButtonDiv = document.createElement("div");
@@ -98,11 +78,15 @@ function loadMotive(){
     
     /*Adding elements to screen*/
     document.getElementById('app').appendChild(motiveTitleDiv);
-    document.getElementById('app').appendChild(motiveDiv);
+    document.getElementById('app').appendChild(motive_container);
     document.getElementById('app').appendChild(motiveButtonDiv);
 }
 
 function loadTitle(){
+    var title_container = document.createElement("div");
+    title_container.id = "title-container";
+    title_container.className = "title-container";
+
     var titleDiv = document.createElement("div");
     titleDiv.id = "titleDiv";
     titleDiv.className = "titleDiv";
@@ -111,7 +95,50 @@ function loadTitle(){
     title.innerHTML = "JADON'S (DAD's) WARDROBE";
     titleDiv.append(title);
 
-    document.getElementById('app').appendChild(titleDiv);
+    var motiveButton = document.createElement("a");
+    motiveButton.innerHTML = "WHY DOES THIS EXIST?";
+    motiveButton.href = "javascript:scrollToElement(\'motive\',15)";
+    motiveButton.className = "motiveBtn";
+
+    titleDiv.append(motiveButton);
+    
+    var homeDiv = document.createElement('div');
+    homeDiv.id = "homeDiv";
+    homeDiv.className = "homeDiv";
+
+    title_container.append(titleDiv);
+    title_container.append(homeDiv);
+
+    document.getElementById('app').appendChild(title_container);
+
+    var slideshow_container = document.createElement('div');
+    slideshow_container.className = 'slideshow-container';
+
+    var slide_img1 = document.createElement('div');
+    slide_img1.className = 'mySlides fade';
+    slideshow_container.append(slide_img1);
+    var img_1 = document.createElement('img');
+    img_1.src = 'img/outfit_1.jpg';
+    img_1.style ="width:100%";
+    slide_img1.append(img_1);
+
+    var slide_img2 = document.createElement('div');
+    slide_img2.className = 'mySlides fade';
+    slideshow_container.append(slide_img2);
+    var img_2 = document.createElement('img');
+    img_2.src = 'img/outfit_2.jpg';
+    img_2.style ="width:100%";
+    slide_img2.append(img_2);
+
+    var slide_img3 = document.createElement('div');
+    slide_img3.className = 'mySlides fade';
+    slideshow_container.append(slide_img3);
+    var img_3 = document.createElement('img');
+    img_3.src = 'img/outfit_3.jpg';
+    img_3.style ="width:100%";
+    slide_img3.append(img_3);
+
+    homeDiv.append(slideshow_container);
 }
 
 function scrollToElement(elementId, offset) {
@@ -125,6 +152,11 @@ function scrollToElement(elementId, offset) {
             behavior: "smooth"
         });
     }
+}
+
+function resetHomePage(){
+    loadContent('home');
+    scrollToElement('title-container');
 }
 
 loadContent("home");
