@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1">
+    <title>Jadon's Wardrobe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel = "stylesheet" href = "style.css">
-
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/10.8.1/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -25,8 +25,27 @@
       <script defer src="/__/firebase/init.js?useEmulator=true"></script>
   </head>
   <body>
+    <div class="navbar">
+      <a href="javascript:resetHomePage()" class="fa fa-home" id = "homeBtn"></a>
+      <a href="javascript:loadContent('products')" class="right" id = "proBtn">Products</a>
+      <a href="javascript:loadContent('contact')" class="right" id = "contBtn">Contact</a>
+      <a href="#" class="right fa fa-bars" id = "openOverlayBtn"></a>
+    </div>
+    <div id="overlay">
+      <div id="overlayContent">
+          <div class = "overlayTab" id = "contactOverlay">
+            <a href="javascript:openNewContent('contact')">Contact</a>
+          </div>
+          <div class = "overlayTab" id = "productOverlay">
+            <a href="javascript:openNewContent('products')">Products</a>
+          </div>
+      </div>
+  </div>
     <div id = "app">
-
-    </div> 
+    </div>
+    <script src="content.js"></script>
+    <script src="scroll.js"></script>
+    <script src="nav.js"></script>
+    <script src="slide.js"></script>
   </body>
 </html>

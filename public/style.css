@@ -1,0 +1,332 @@
+body{ 
+    margin:0;
+    background-color: #121212;
+    user-select: none;
+    font-family: monospace;
+    overflow-x: hidden;
+}
+
+.profile-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: auto;
+  }
+  
+.profile-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+.profile-card-container {
+    padding: 2px 16px;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1{
+    margin:0;
+}
+
+h2{
+    font-size: 5vw;
+    text-align: center;
+    margin:0;
+}
+
+.homeDiv{
+    overflow:hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100vw; 
+    height: 100vh;
+    overflow: hidden;
+}
+
+@media only screen and (orientation: portrait) {
+     
+    h1{
+        font-size: 8vh;
+        text-align:center;
+        padding-top: 2.5vh;
+        padding-bottom:5vh;
+        margin-bottom:5vh;
+    }
+
+    h3{
+        font-size: 5vw;
+        margin:0;
+    }
+    
+    h4 {
+        font-size: 3vw;
+        font-style: italic;
+        font-weight: normal;
+    }
+
+    .homeDiv{
+        height:50vh;
+        width:100vw;
+    }
+
+    #contBtn, #proBtn {
+        display: none;
+    }
+
+    #openOverlayBtn{
+        display: block;
+    }
+
+    .overlayTab{
+        text-align: center;
+        display: block;
+        padding-bottom: 3vh;
+    }
+
+
+    .overlayTab a{
+        text-decoration: none;
+        color:#1AACEA;
+        margin:auto;
+        font-size:15vw;
+        text-transform: uppercase;
+    }
+
+    .profile-card {
+        width:50%;
+    }
+
+    .motive-container{
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #motiveText{
+        font-size:1.8vh;
+    }
+
+    .motiveBtn {
+        padding:15px 10px;
+        font-size: 3vh;
+    }
+
+    .navbar{
+        font-size: 3vh;
+        height:5vh;
+    }
+
+    .navbar a {
+        padding: 1vh 2vh;
+    }
+
+    .titleDiv{
+        width: 100vw;
+        height:50vh;
+    }
+
+    .title-container{
+        grid-template-rows: 1fr 1fr;
+    }
+
+}
+
+@media only screen and (orientation: landscape) {
+    #openOverlayBtn {
+        display: none;
+    }
+    
+    h1{
+        text-align:left;
+        padding-top:5vh;
+        font-size: 10vw;
+        padding-bottom:2vh;
+        padding-left:0.5vw;
+        margin-bottom: 1vw;
+    }
+    
+    h2{
+        font-size: 3vw;
+    }
+
+    h3{
+        font-size: 2vw;
+        margin:0;
+    }
+    
+    h4 {
+        font-size: 1vw;
+        font-style: italic;
+    }
+
+    .homeDiv{
+        height:100vh;
+        width:50vw;
+    }
+
+    .motive-container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #motiveText{
+        font-size:1.8vw;
+    }
+
+    .motiveBtn{
+        padding: 15px 25px;
+        font-size: 2.5vw;
+    }
+
+    .navbar{
+        font-size:3vw;
+        height:5vw;
+    }
+
+    .navbar a {
+        padding: 1vw 1vw;
+    }
+
+    .profile-card {
+        width:45%;
+    }
+
+    .titleDiv{
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .title-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.motiveBtn {
+    background-color: #1AACEA;
+    color:#ffffff;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.motiveBtn:hover {
+    background-color: #ffffff;
+    color:#1AACEA;
+}
+
+.motiveBtnDiv{
+    height:25vh;
+    width:100vw;
+    position: relative;
+}
+
+.motive-container{
+    display: grid;
+    height:65vh;
+    color: #ffffff;
+}
+
+#motiveText{
+    padding-left:20%;
+    padding-right:20%;
+}
+
+.motiveTitleDiv{
+    margin-top: 5vh;
+    color:#1AACEA;
+    height:10vh;
+    width:100vw;
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    text-decoration: underline;
+}
+
+.navbar a.right {
+    float: right;
+}
+
+#openOverlayBtn {
+    text-decoration: none;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+#overlayContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: #121212;
+    padding-top: 5vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.title-container{
+    animation: fadeIn 5s;
+    display: grid;
+}
+
+.titleDiv{
+    color: #1AACEA;
+    text-align: center;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  .mySlides {
+    display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    margin: auto;
+  }
