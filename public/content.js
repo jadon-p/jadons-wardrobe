@@ -6,6 +6,8 @@ function loadContent(contentType){
             loadMotive();
             break;
         case "products":
+            loadProductTitleDiv()
+            loadProducts();
             break;
         case "contact":
             break;
@@ -20,6 +22,16 @@ function generateMotiveText(){
     var line3 = "If you have any questions just contact me through whatevever. ";
     var line4 = "I appreciate any feedback and hope you find something you like :)";
     return line1 + line2 + line3 + line4;
+}
+
+function generateProductDesc(){
+    var line1 = "Please note the following:<br>";
+    var line2 = "• All clothing pieces are second hand<br>";
+    var line3 = "• There is no delivery for any pieces<br>";
+    var line4 = "• Payments are cash only<br>";
+    var line5 = "• There are no refunds or exchanges<br>";
+    var line6 = "• Sizes are as accurate as possible<br>";
+    return line1 + line2 + line3 + line4 + line5 + line6;
 }
 
 function loadMotive(){
@@ -47,7 +59,7 @@ function loadMotive(){
 
     var card_container = document.createElement("div");
     card_container.className = "profile-card-container";
-    card_container.innerHTML = "<h3>Jadon Puertollano</h3> <h4>Occupation: Jobless</h4> ";
+    card_container.innerHTML = "<h3>Jadon Puertollano</h3> <h4>Occupation: Bum</h4> ";
 
     var motiveTextDiv = document.createElement('div');
     var motiveText = document.createElement('p'); 
@@ -67,7 +79,7 @@ function loadMotive(){
     var productButton = document.createElement("a");
     productButton.id = "productBtn";
     productButton.innerHTML = "View Products";
-    productButton.href = "javascript:loadContent(\"products\")";
+    productButton.href = "javascript:resetProductsPage()";
     productButton.className = "motiveBtn";
 
     var center2 = document.createElement("div");
@@ -80,6 +92,47 @@ function loadMotive(){
     document.getElementById('app').appendChild(motiveTitleDiv);
     document.getElementById('app').appendChild(motive_container);
     document.getElementById('app').appendChild(motiveButtonDiv);
+}
+
+function loadProducts(){
+    var product_container = document.createElement("div");
+    product_container.id = "product-container";
+    document.getElementById('app').appendChild(product_container);
+}
+
+function loadProductTitleDiv(){
+    var productDiv = document.createElement("div");
+    productDiv.className = "productDiv";
+    productDiv.id = "productDiv";
+
+    var productTitleContainer = document.createElement("div");
+    productTitleContainer.className = "productTitleContainer";
+
+    var productTitle = document.createElement("h5");
+    productTitle.innerHTML = "PRODUCTS";
+    productTitleContainer.append(productTitle);
+
+    productDiv.append(productTitleContainer);
+
+    var productDescDiv = document.createElement("div");
+    productDescDiv.className = "productDescDiv";
+
+    var productDesc = document.createElement("h6");
+    productDesc.innerHTML = generateProductDesc();
+    productDescDiv.append(productDesc);
+    productDiv.append(productDescDiv);
+
+    var productBtnDiv = document.createElement("div");
+    productBtnDiv.id = "productBtnDiv";
+
+    var productButton = document.createElement('a');
+    productButton.innerHTML = "Scroll to Products";
+    productButton.id = "productBtn";
+    productButton.href = "javascript:scrollToElement(\'product-container\',15)";
+    productBtnDiv.append(productButton);
+    productDiv.append(productBtnDiv);
+    
+    document.getElementById('app').appendChild(productDiv);
 }
 
 function loadTitle(){
@@ -157,6 +210,11 @@ function scrollToElement(elementId, offset) {
 function resetHomePage(){
     loadContent('home');
     scrollToElement('title-container');
+}
+
+function resetProductsPage(){
+    loadContent('products');
+    scrollToElement('productDiv');
 }
 
 loadContent("home");
