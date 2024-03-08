@@ -22,6 +22,11 @@ function closeOverlay() {
     }, 300);
 }
 
+function openNewContent(content){
+    closeOverlay();
+    loadContent(content);
+}
+
 openOverlayBtn.addEventListener('click', function(){
     if (overlay.style.display == 'block'){
         closeOverlay();
@@ -29,3 +34,4 @@ openOverlayBtn.addEventListener('click', function(){
         openOverlay();
     }
 });
+

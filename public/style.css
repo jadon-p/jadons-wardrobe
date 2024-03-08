@@ -55,12 +55,14 @@ html {
     overflow: hidden;
 }
 
-@media (orientation: portrait) {
+@media only screen and (orientation: portrait) {
+     
     h1{
         font-size: 8vh;
         text-align:center;
         padding-top: 2.5vh;
         padding-bottom:5vh;
+        margin-bottom:5vh;
     }
 
     h3{
@@ -87,6 +89,21 @@ html {
         display: block;
     }
 
+    .overlayTab{
+        text-align: center;
+        display: block;
+        padding-bottom: 3vh;
+    }
+
+
+    .overlayTab a{
+        text-decoration: none;
+        color:#1AACEA;
+        margin:auto;
+        font-size:15vw;
+        text-transform: uppercase;
+    }
+
     .profile-card {
         width:50%;
     }
@@ -101,7 +118,7 @@ html {
 
     .motiveBtn {
         padding:15px 10px;
-        font-size: 10px;
+        font-size: 3vh;
     }
 
     .navbar{
@@ -124,7 +141,7 @@ html {
 
 }
 
-@media (orientation: landscape) {
+@media only screen and (orientation: landscape) {
     #openOverlayBtn {
         display: none;
     }
@@ -132,13 +149,14 @@ html {
     h1{
         text-align:left;
         padding-top:5vh;
-        font-size: 22vh;
+        font-size: 10vw;
         padding-bottom:2vh;
         padding-left:0.5vw;
+        margin-bottom: 1vw;
     }
     
     h2{
-        font-size: 2vw;
+        font-size: 3vw;
     }
 
     h3{
@@ -166,7 +184,7 @@ html {
 
     .motiveBtn{
         padding: 15px 25px;
-        font-size: 16px;
+        font-size: 2.5vw;
     }
 
     .navbar{
@@ -175,7 +193,7 @@ html {
     }
 
     .navbar a {
-        padding: 1vw 2vw;
+        padding: 1vw 1vw;
     }
 
     .profile-card {
@@ -225,7 +243,7 @@ html {
 
 .motiveTitleDiv{
     margin-top: 5vh;
-    color:#ffffff;
+    color:#1AACEA;
     height:10vh;
     width:100vw;
 }
@@ -274,11 +292,10 @@ html {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 100vw;
     height: 100%;
     background-color: #121212;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding-top: 5vh;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
 }

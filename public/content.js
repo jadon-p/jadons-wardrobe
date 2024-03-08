@@ -119,7 +119,7 @@ function loadTitle(){
     slideshow_container.append(slide_img1);
     var img_1 = document.createElement('img');
     img_1.src = 'img/outfit_1.jpg';
-    img_1.style ="width:100%";
+    img_1.style ="width:100%;";
     slide_img1.append(img_1);
 
     var slide_img2 = document.createElement('div');
