@@ -98,6 +98,45 @@ function loadProducts(){
     var product_container = document.createElement("div");
     product_container.id = "product-container";
     document.getElementById('app').appendChild(product_container);
+
+    loadProductCard("img/outfit_1.jpg", "Test", "$30", "Some Text");
+    loadProductCard("img/outfit_1.jpg", "Test", "$30", "Some Text");
+    loadProductCard("img/outfit_1.jpg", "Test", "$30", "Some Text");
+    loadProductCard("img/outfit_1.jpg", "Test", "$30", "Some Text");
+}
+
+function loadProductCard(img_src, name, price, desc){
+    var card = document.createElement("div");
+    card.className = "productCard";
+
+    var productImg = document.createElement("img");
+    productImg.src = img_src;
+    productImg.style = "width:100%";
+
+    card.append(productImg);
+
+    var productName = document.createElement("h7");
+    productName.innerHTML = name;
+
+    card.append(productName);
+
+    var productPrice = document.createElement("div");
+    productPrice.className = "price";
+    productPrice.innerHTML = price;
+
+    card.append(productPrice);
+
+    var productDesc = document.createElement("p");
+    productDesc.innerHTML = desc;
+
+    card.append(productDesc);
+
+    var cardBtn = document.createElement("button");
+    cardBtn.innerHTML = "View Product";
+    
+    card.append(cardBtn);
+
+    document.getElementById("product-container").appendChild(card);
 }
 
 function loadProductTitleDiv(){
