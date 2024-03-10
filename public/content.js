@@ -13,10 +13,20 @@ function loadContent(contentType){
             loadProducts();
             break;
         case "contact":
+            loadContactPage();
             break;
         default:
             break;
     }
+}
+
+function generateContactText(){
+    var line1 = "• Feel free to msg me about any questions<br>";
+    var line2 = "• Links to my socials are on the right<br>";
+    var line3 = "• Want anything delivered? Pay for my flight :)<br>";
+    var line4 = "• Don't be dog about the pricing :(<br>";
+
+    return line1 + line2 + line3 + line4;
 }
 
 function generateMotiveText(){
@@ -29,12 +39,71 @@ function generateMotiveText(){
 
 function generateProductDesc(){
     var line1 = "Please note the following:<br>";
-    var line2 = "• All clothing pieces are specified new or second-hand<br>";
+    var line2 = "• All clothing pieces are marked new or second-hand<br>";
     var line3 = "• There is no delivery for any pieces<br>";
     var line4 = "• Payments are cash only<br>";
     var line5 = "• There are no refunds or exchanges<br>";
     var line6 = "• Sizes are as accurate as possible<br>";
     return line1 + line2 + line3 + line4 + line5 + line6;
+}
+
+function loadContactPage(){
+    var contactDiv = document.createElement("div");
+    contactDiv.className = "contactDiv";
+
+    var contactTitleDiv = document.createElement("div");
+    contactTitleDiv.className = "contactTitle";
+
+    var contactTitle = document.createElement("h8");
+    contactTitle.innerHTML = "CONTACT";
+
+    var contactText = document.createElement("h6");
+    contactText.id = "contactText";
+    contactText.innerHTML = generateContactText();
+
+    contactTitleDiv.append(contactTitle);
+    contactTitleDiv.append(contactText);
+    contactDiv.append(contactTitleDiv);
+
+    var card = document.createElement("div");
+    card.className = "profile-card";
+    card.style = "text-align:center;";
+
+    var card_img = document.createElement("img");
+    card_img.style = "width:100%";
+    card_img.src = "img/profile_2.jpg";
+
+    var card_container = document.createElement("div");
+    card_container.className = "profile-card-container";
+    card_container.innerHTML = "<h3>Jadon</h3> <h4>Jobless Bum</h4> ";
+
+    var contacts = document.createElement("div");
+    contacts.style = "margin-bottom: 10px;";
+    contacts.id = "contacts";
+
+    var facebook = document.createElement("a");
+    facebook.href="https://www.facebook.com/Jadon.P29/";
+    var facebookLogo = document.createElement("i");
+    facebookLogo.className = "fa fa-facebook";
+    facebook.append(facebookLogo);
+
+    var instagram = document.createElement("a");
+    instagram.href="https://www.instagram.com/jadon.p/";
+    var instagramLogo = document.createElement("i");
+    instagramLogo.className = "fa fa-instagram";
+    instagram.append(instagramLogo);
+
+    contacts.append(instagram);
+    contacts.append(" ");
+    contacts.append(facebook);
+
+    card.append(card_img);
+    card.append(card_container);
+    card.append(contacts);
+
+    contactDiv.append(card);
+    
+    document.getElementById('app').appendChild(contactDiv);
 }
 
 function loadMotive(){

@@ -26,6 +26,23 @@ body{
     cursor: pointer;
 }
 
+.contactDiv{
+    animation: fadeIn 5s;
+}
+
+.contactTitle{
+    width:100%;
+    color:#1AACEA;
+    font-weight: bold;
+    font-style: italic;
+    display: inherit;
+}
+
+#contactText{
+    text-align: left;
+    font-style: normal;
+}
+
 /* Fading animation */
 .fade {
     animation-name: fade;
@@ -66,7 +83,19 @@ html {
     .close {
         font-size:5vw;
     }
-    
+
+    #contacts{
+        font-size:3vw;
+    }
+
+    .contactDiv{
+        margin-top: 5vw;
+        grid-template-columns: 60% 40%;
+        display:grid;
+        height:95vh;
+        width:100vw;
+    }
+
     h1{
         text-align:left;
         padding-top:5vh;
@@ -106,6 +135,10 @@ html {
 
     h7{
         font-size:5vw;
+    }
+
+    h8{
+        padding-left:1vw;
     }
 
     .homeDiv{
@@ -184,6 +217,10 @@ html {
 }
 
 @media only screen and (orientation: landscape) and (min-width:1000px) {
+    h8{
+        font-size:12vw;
+    }
+
     .modal-content {
         width: 35vw;
     }
@@ -201,6 +238,10 @@ html {
     h4{
         font-size:1.2vw;
     }
+    
+    h8{
+        font-size:12vw;
+    }
 
     #product-container{
         grid-template-columns: 1fr 1fr;
@@ -208,6 +249,10 @@ html {
 }
 
 @media only screen and (orientation: landscape) and (max-width:700px) {
+    h8{
+        font-size:10vw;
+    }
+
     .modal-content {
         width: 25vw;
     }
@@ -367,7 +412,6 @@ html {
     max-width: 300px;
     margin: auto;
     text-align: center;
-    font-family: arial;
     color:white;
 }
 
@@ -433,6 +477,8 @@ html {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin: auto;
+    max-width: 300px;
+    color:#ffffff
 }
   
 .profile-card:hover {
@@ -447,7 +493,25 @@ html {
     .close {
         font-size:5vh;
     }
-     
+
+    #contacts{
+        font-size:3vh;
+    }
+
+    .contactDiv{
+        margin-top: 5vh;
+        grid-template-rows: 40% 60%;
+        display:grid;
+        height:95vh;
+        width:100vw;
+    }
+
+    .contactTitle {
+        text-align: center;
+        align-items: center;
+        display: grid;
+    }
+   
     h1{
         font-size: 8vh;
         text-align:center;
@@ -482,6 +546,10 @@ html {
 
     h7 {
         font-size: 6vh;
+    }
+
+    h8{
+        font-size:9vh;
     }
 
     .homeDiv{
