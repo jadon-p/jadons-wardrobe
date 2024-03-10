@@ -6,6 +6,11 @@ function loadContent(contentType){
             loadMotive();
             break;
         case "products":
+            loadProductTitleDiv()
+            var product = document.createElement("script");
+            product.src = "product.js";
+            document.getElementById('app').appendChild(product);
+            loadProducts();
             break;
         case "contact":
             break;
@@ -20,6 +25,16 @@ function generateMotiveText(){
     var line3 = "If you have any questions just contact me through whatevever. ";
     var line4 = "I appreciate any feedback and hope you find something you like :)";
     return line1 + line2 + line3 + line4;
+}
+
+function generateProductDesc(){
+    var line1 = "Please note the following:<br>";
+    var line2 = "• All clothing pieces are specified new or second-hand<br>";
+    var line3 = "• There is no delivery for any pieces<br>";
+    var line4 = "• Payments are cash only<br>";
+    var line5 = "• There are no refunds or exchanges<br>";
+    var line6 = "• Sizes are as accurate as possible<br>";
+    return line1 + line2 + line3 + line4 + line5 + line6;
 }
 
 function loadMotive(){
@@ -47,7 +62,7 @@ function loadMotive(){
 
     var card_container = document.createElement("div");
     card_container.className = "profile-card-container";
-    card_container.innerHTML = "<h3>Jadon Puertollano</h3> <h4>Occupation: Jobless</h4> ";
+    card_container.innerHTML = "<h3>Jadon</h3> <h4>Occupation: Bum</h4> ";
 
     var motiveTextDiv = document.createElement('div');
     var motiveText = document.createElement('p'); 
@@ -67,7 +82,7 @@ function loadMotive(){
     var productButton = document.createElement("a");
     productButton.id = "productBtn";
     productButton.innerHTML = "View Products";
-    productButton.href = "javascript:loadContent(\"products\")";
+    productButton.href = "javascript:resetPage('products')";
     productButton.className = "motiveBtn";
 
     var center2 = document.createElement("div");
@@ -80,6 +95,148 @@ function loadMotive(){
     document.getElementById('app').appendChild(motiveTitleDiv);
     document.getElementById('app').appendChild(motive_container);
     document.getElementById('app').appendChild(motiveButtonDiv);
+}
+
+function loadProducts(){
+    var product_container = document.createElement("div");
+    product_container.id = "product-container";
+    document.getElementById('app').appendChild(product_container);
+
+    loadProductCard("1","img/outfit_1.jpg", "shirt", "$30", "Some Text");
+    loadProductCard("1","img/outfit_1.jpg", "Test", "$30", "Some Text");
+    loadProductCard("1","img/outfit_1.jpg", "Test", "$30", "Some Text");
+    loadProductCard("1","img/outfit_1.jpg", "Test", "$30", "Some Text");
+}
+
+function loadProductCard(id,img_src, name, price, desc){
+    var card = document.createElement("div");
+    card.className = "productCard";
+
+    var productImg = document.createElement("img");
+    productImg.src = img_src;
+    productImg.style = "width:100%";
+
+    card.append(productImg);
+
+    var productName = document.createElement("h7");
+    productName.innerHTML = name;
+
+    card.append(productName);
+
+    var productPrice = document.createElement("div");
+    productPrice.className = "price";
+    productPrice.innerHTML = price;
+
+    card.append(productPrice);
+
+    var productDesc = document.createElement("p");
+    productDesc.innerHTML = desc;
+
+    card.append(productDesc);
+
+    var cardBtn = document.createElement("button");
+    cardBtn.innerHTML = "View Product";
+    cardBtn.onclick = function() {
+        var modalExists = document.getElementById("modal"+id);
+        if (!modalExists){
+            loadProductModal(id); 
+        } 
+        openModal(id);
+    };
+    
+    card.append(cardBtn);
+
+    document.getElementById("product-container").appendChild(card);
+}
+
+function loadProductModal(id){
+    var clothingModal = document.createElement("div");
+    clothingModal.id = "modal"+id;
+    clothingModal.className = "modal";
+
+    var modal_content = document.createElement("div");
+    modal_content.className = "modal-content";
+
+    clothingModal.append(modal_content);
+
+    var span = document.createElement("span");
+    span.className = "close";
+    span.onclick = function() {
+        closeModal(id);
+    };
+    span.innerHTML = "&times";
+
+    modal_content.append(span);
+
+    var img = document.createElement("img");
+    img.src = "";
+    img.className = "modal-image";
+    img.id = "modalImage"+id;
+
+    modal_content.append(img);
+
+    var btnDiv = document.createElement("div");
+    btnDiv.className = "modalBtnDiv";
+
+    var prevBtn = document.createElement("button");
+    prevBtn.id = "prevBtn";
+    prevBtn.onclick = function() {
+        prevImage(id);
+    };
+    prevBtn.innerHTML = "<";
+    btnDiv.append(prevBtn);
+
+    var rightBtnDiv = document.createElement("div");
+    rightBtnDiv.className = "right";
+
+    var nextBtn = document.createElement("button");
+    nextBtn.id = "nextBtn";
+    nextBtn.onclick = function() {
+        nextImage(id);
+    };
+    nextBtn.innerHTML = ">";
+
+    rightBtnDiv.append(nextBtn);
+    btnDiv.append(rightBtnDiv);
+
+    modal_content.append(btnDiv);
+
+    document.getElementById("app").appendChild(clothingModal);
+}
+
+function loadProductTitleDiv(){
+    var productDiv = document.createElement("div");
+    productDiv.className = "productDiv";
+    productDiv.id = "productDiv";
+
+    var productTitleContainer = document.createElement("div");
+    productTitleContainer.className = "productTitleContainer";
+
+    var productTitle = document.createElement("h5");
+    productTitle.innerHTML = "PRODUCTS";
+    productTitleContainer.append(productTitle);
+
+    productDiv.append(productTitleContainer);
+
+    var productDescDiv = document.createElement("div");
+    productDescDiv.className = "productDescDiv";
+
+    var productDesc = document.createElement("h6");
+    productDesc.innerHTML = generateProductDesc();
+    productDescDiv.append(productDesc);
+    productDiv.append(productDescDiv);
+
+    var productBtnDiv = document.createElement("div");
+    productBtnDiv.id = "productBtnDiv";
+
+    var productButton = document.createElement('a');
+    productButton.innerHTML = "Scroll to Products";
+    productButton.id = "productBtn";
+    productButton.href = "javascript:scrollToElement(\'product-container\',15)";
+    productBtnDiv.append(productButton);
+    productDiv.append(productBtnDiv);
+    
+    document.getElementById('app').appendChild(productDiv);
 }
 
 function loadTitle(){
@@ -154,9 +311,12 @@ function scrollToElement(elementId, offset) {
     }
 }
 
-function resetHomePage(){
-    loadContent('home');
-    scrollToElement('title-container');
+function resetPage(content){
+    document.getElementById('app').innerHTML="";
+    window.scrollTo(0,0);
+    setTimeout(function () {
+        loadContent(content);
+    }, 10);
 }
 
 loadContent("home");

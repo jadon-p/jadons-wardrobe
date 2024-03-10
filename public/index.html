@@ -25,10 +25,10 @@
       <script defer src="/__/firebase/init.js?useEmulator=true"></script>
   </head>
   <body>
-    <div class="navbar">
-      <a href="javascript:resetHomePage()" class="fa fa-home" id = "homeBtn"></a>
-      <a href="javascript:loadContent('products')" class="right" id = "proBtn">Products</a>
-      <a href="javascript:loadContent('contact')" class="right" id = "contBtn">Contact</a>
+    <div class="navbar" id = "navBar">
+      <a href="javascript:resetPage('home')" class="fa fa-home" id = "homeBtn"></a>
+      <a href="javascript:resetPage('products')" class="right" id = "proBtn">Products</a>
+      <a href="javascript:resetPage('contact')" class="right" id = "contBtn">Contact</a>
       <a href="#" class="right fa fa-bars" id = "openOverlayBtn"></a>
     </div>
     <div id="overlay">
