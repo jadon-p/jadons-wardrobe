@@ -15,6 +15,17 @@ body{
     transform: translate(-50%, -50%);
 }
 
+.close {
+    float:right;
+    cursor:pointer;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Fading animation */
 .fade {
     animation-name: fade;
@@ -52,8 +63,8 @@ html {
 }
 
 @media only screen and (orientation: landscape) {
-    #openOverlayBtn {
-        display: none;
+    .close {
+        font-size:5vw;
     }
     
     h1{
@@ -102,6 +113,10 @@ html {
         width:50vw;
     }
 
+    .modal-content{
+        width: 28vw;
+    }
+
     .motive-container{
         grid-template-columns: 1fr 1fr;
     }
@@ -122,6 +137,14 @@ html {
 
     .navbar a {
         padding: 1vw 1vw;
+    }
+
+    #nextBtn, #prevBtn {
+        font-size:4vw;
+    }
+
+    #openOverlayBtn {
+        display: none;
     }
 
     #productBtn{
@@ -161,15 +184,78 @@ html {
 }
 
 @media only screen and (orientation: landscape) and (min-width:1000px) {
+    .modal-content {
+        width: 45vw;
+    }
+
     #product-container{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
 @media only screen and (orientation: landscape) and (max-width:1000px) {
+    h3{
+        font-size:2.5vw;
+    }
+
+    h4{
+        font-size:1.2vw;
+    }
+    .modal-content {
+        width: 40vw;
+    }
+
     #product-container{
         grid-template-columns: 1fr 1fr;
     }
+}
+
+@media only screen and (orientation: landscape) and (max-width:700px) {
+    .modal-content {
+        width: 25vw;
+    }
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    color:#ffffff;
+}
+
+.modalBtnDiv{
+    float:left;
+    width: 100%;
+    margin-top: -65%;
+    position: relative;
+    z-index: 1;
+}
+
+.modalBtnDiv .right{
+    float:right;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .motiveBtn {
@@ -238,6 +324,20 @@ html {
     float: right;
 }
 
+#nextBtn, #prevBtn {
+    color:#ffffff;
+    transition-duration: 0.4s;
+    border-radius: 15px;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#nextBtn:hover, #prevBtn:hover {
+    color:#1AACEA;
+}
+
 #openOverlayBtn {
     text-decoration: none;
 }
@@ -249,7 +349,6 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
     transition: transform 0.3s ease-in-out;
 }
@@ -302,6 +401,10 @@ html {
     font-weight: bold;
 }
 
+#productDiv{
+    animation: fadeIn 5s;
+}
+
 #productBtn:hover{
     background-color: #1AACEA;
     color:#ffffff;
@@ -344,6 +447,9 @@ html {
 }
 
 @media only screen and (orientation: portrait) {
+    .close {
+        font-size:5vh;
+    }
      
     h1{
         font-size: 8vh;
@@ -389,6 +495,10 @@ html {
     #contBtn, #proBtn {
         display: none;
     }
+    
+    .modal-content{
+        width: 80%;
+    }
 
     .motive-container{
         grid-template-rows: 1fr 1fr;
@@ -410,6 +520,10 @@ html {
 
     .navbar a {
         padding: 1vh 2vh;
+    }
+
+    #nextBtn, #prevBtn {
+        font-size:6vh;
     }
 
     #openOverlayBtn{
@@ -491,4 +605,14 @@ html {
 .titleDiv{
     color: #1AACEA;
     text-align: center;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+    
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
 }
