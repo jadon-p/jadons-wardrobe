@@ -33,7 +33,7 @@ function openModal(id) {
 
 function closeModal(id) {
     document.getElementById('modal'+id).style.display = 'none';
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
     document.getElementById("navBar").style = "display:block";
 }
 
