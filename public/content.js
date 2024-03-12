@@ -23,7 +23,7 @@ function loadContent(contentType){
 function generateContactText(){
     var line1 = "• Feel free to msg me about any questions<br>";
     var line2 = "• Links to my socials are on the right<br>";
-    var line3 = "• Want anything delivered? Pay for my flight :)<br>";
+    var line3 = "• Want anything delivered? Pay for my flight/gas :)<br>";
     var line4 = "• Don't be dog about the pricing :(<br>";
 
     return line1 + line2 + line3 + line4;
@@ -71,7 +71,7 @@ function loadContactPage(){
 
     var card_img = document.createElement("img");
     card_img.style = "width:100%";
-    card_img.src = "img/profile_2.jpg";
+    card_img.src = "img/self/profile_2.jpg";
 
     var card_container = document.createElement("div");
     card_container.className = "profile-card-container";
@@ -127,7 +127,7 @@ function loadMotive(){
 
     var card_img = document.createElement("img");
     card_img.style = "width:100%";
-    card_img.src = "img/profile.jpg";
+    card_img.src = "img/self/profile_1.jpg";
 
     var card_container = document.createElement("div");
     card_container.className = "profile-card-container";
@@ -171,10 +171,18 @@ function loadProducts(){
     product_container.id = "product-container";
     document.getElementById('app').appendChild(product_container);
 
-    loadProductCard("1","img/outfit_1.jpg", "shirt", "$30", "Some Text");
-    loadProductCard("1","img/outfit_1.jpg", "Test", "$30", "Some Text");
-    loadProductCard("1","img/outfit_1.jpg", "Test", "$30", "Some Text");
-    loadProductCard("1","img/outfit_1.jpg", "Test", "$30", "Some Text");
+    loadProductCard("1","img/1/thumbnail.jpeg", "Vintage Polo Shirt", "$35", "Second-hand Spiderman Polo <br> Size: L");
+    loadProductCard("2","img/2/thumbnail.jpeg", "T.M. Lewin Pants", "$40", "Second-hand Navy Blue Cotton Pants <br> Size: 32S");
+    loadProductCard("3","img/3/thumbnail.jpeg", "Vintage Nautica Polo", "$25", "Brand New Gray Polo <br> Size: L");
+    loadProductCard("4","img/4/thumbnail.jpeg", "Vintage Florida Sweater", "$40", "Second-hand Grey Sweater <br> Size: XL");
+    loadProductCard("5","img/5/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$50", "Second-hand Black Hoodie <br> Size: M");
+    loadProductCard("6","img/6/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$75", "Brand New White Hoodie <br> Size: M");
+    loadProductCard("7","img/7/thumbnail.jpeg", "H. Brothers Pants", "$25", "Second-hand Black Polyester Pants <br> Size: 82 Stretch Skinny");
+    loadProductCard("8","img/8/thumbnail.jpeg", "Ralph Lauren Polo", "$50", "Vintage Second-hand Plaid Polo <br> Size: L");
+    loadProductCard("9","img/9/thumbnail.jpeg", "David Taylor Polo", "$25", "Brand New Blue Polo <br> Size: L");
+    loadProductCard("10","img/10/thumbnail.jpeg", "Ralph Lauren Pants", "$60", "Vintage Brand New Cotton Polo <br> Size: L");
+    loadProductCard("11","img/11/thumbnail.jpeg", "Cooper Hawk Polo Shirt", "$30", "Second-hand Green Denim Pants <br> Size: 32 W 32 L");
+    loadProductCard("12","img/12/thumbnail.jpeg", "Adidas Trefoil Hoodie", "$45", "Second-hand Maroon Hoodie <br> Size: L");
 }
 
 function loadProductCard(id,img_src, name, price, desc){
@@ -344,7 +352,7 @@ function loadTitle(){
     slide_img1.className = 'mySlides fade';
     slideshow_container.append(slide_img1);
     var img_1 = document.createElement('img');
-    img_1.src = 'img/outfit_1.jpg';
+    img_1.src = 'img/self/outfit_1.jpg';
     img_1.style ="width:100%;";
     slide_img1.append(img_1);
 
@@ -352,7 +360,7 @@ function loadTitle(){
     slide_img2.className = 'mySlides fade';
     slideshow_container.append(slide_img2);
     var img_2 = document.createElement('img');
-    img_2.src = 'img/outfit_2.jpg';
+    img_2.src = 'img/self/outfit_2.jpg';
     img_2.style ="width:100%";
     slide_img2.append(img_2);
 
@@ -360,7 +368,7 @@ function loadTitle(){
     slide_img3.className = 'mySlides fade';
     slideshow_container.append(slide_img3);
     var img_3 = document.createElement('img');
-    img_3.src = 'img/outfit_3.jpg';
+    img_3.src = 'img/self/outfit_3.jpg';
     img_3.style ="width:100%";
     slide_img3.append(img_3);
 

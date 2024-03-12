@@ -21,9 +21,10 @@ body{
 }
 
 .close:hover, .close:focus {
-    color: black;
+    color: #1AACEA;
     text-decoration: none;
     cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 .contactDiv{
@@ -148,6 +149,7 @@ html {
 
     .modal-content{
         width: 28vw;
+        max-width:440px;
     }
 
     .motive-container{
@@ -217,6 +219,10 @@ html {
 }
 
 @media only screen and (orientation: landscape) and (min-width:1000px) {
+    h7{
+        font-size: 3vw;
+    }
+
     h8{
         font-size:12vw;
     }
@@ -241,6 +247,10 @@ html {
     
     h8{
         font-size:12vw;
+    }
+
+    .modal-content{
+        max-width:175px
     }
 
     #product-container{
@@ -285,7 +295,6 @@ html {
 .modalBtnDiv{
     float:left;
     width: 100%;
-    margin-top: -65%;
     position: relative;
     z-index: 1;
 }
@@ -563,6 +572,7 @@ html {
     
     .modal-content{
         width: 80%;
+        max-width:480px;
     }
 
     .motive-container{
