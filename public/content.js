@@ -183,6 +183,18 @@ function loadProducts(){
     loadProductCard("10","img/10/thumbnail.jpeg", "Ralph Lauren Pants", "$60", "Vintage Brand New Cotton Polo <br> Size: L");
     loadProductCard("11","img/11/thumbnail.jpeg", "Cooper Hawk Polo Shirt", "$30", "Second-hand Green Denim Pants <br> Size: 32 W 32 L");
     loadProductCard("12","img/12/thumbnail.jpeg", "Adidas Trefoil Hoodie", "$45", "Second-hand Maroon Hoodie <br> Size: L");
+    /*loadProductCard("13","img/13/thumbnail.jpeg", "Adidas Pants", "$30", "Second-Hand Black Sweatpants <br> Size: L");
+    loadProductCard("14","img/14/thumbnail.jpeg", "Adidas Hoodie", "$30", "Second-hand Blue Hoodie <br> Size: M");
+    loadProductCard("15","img/15/thumbnail.jpeg", "California Hoodie", "$40", "Second-hand Navy Hoodie <br> Size: L");
+    loadProductCard("16","img/16/thumbnail.jpeg", "Converse T-Shirt", "$20", "Second-hand White Long Sleeve <br> Size: M");
+    loadProductCard("17","img/17/thumbnail.jpeg", "Gap Athletic", "$20", "Second-hand Maroon Long Sleeve <br> Size: M");
+    loadProductCard("18","img/18/thumbnail.jpeg", "Giordano T-shirt", "$15", "Brand New White T-shirt <br> Size: L");
+    loadProductCard("19","img/19/thumbnail.jpeg", "Grand Slam Polo", "$30", "Vintage Gray Polo <br> Size: L");
+    loadProductCard("20","img/20/thumbnail.jpeg", "Hollister T-shirt", "$20", "Second-hand Navy Long Sleeve <br> Size: L");
+    loadProductCard("21","img/21/thumbnail.jpeg", "New Balance Pants", "$30", "Second-hand Black Sweatpants <br> Size: L");
+    loadProductCard("22","img/22/thumbnail.jpeg", "San Jose Hoodie", "$30", "Second-hand Red Hoodie <br> Size: L");
+    loadProductCard("23","img/23/thumbnail.jpeg", "T.H Long Sleeve", "$20", "Second-hand Red/Navy Long Sleeve <br> Size: M");
+    loadProductCard("24","img/24/thumbnail.jpeg", "Zara Jacket", "$20", "Second-hand Olive Green Jacket <br> Size: L"); */
 }
 
 function loadProductCard(id,img_src, name, price, desc){

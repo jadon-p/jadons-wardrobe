@@ -11,7 +11,19 @@ var currentImageIndex = {
     9: 0,
     10: 0,
     11: 0,
-    12: 0
+    12: 0,
+    13: 0,
+    14: 0,
+    15: 0,
+    16: 0,
+    17: 0,
+    18: 0,
+    19: 0,
+    20: 0,
+    21: 0,
+    22: 0,
+    23: 0,
+    24: 0
   };
 
 /*Add images to this list */
@@ -66,6 +78,56 @@ var images = {
     12: [
       'img/12/front.jpeg',
       'img/12/back.jpeg',
+    ],
+    13: [
+      'img/13/front.jpeg',
+      'img/13/back.jpeg',
+      'img/13/folded.jpeg',
+    ],
+    14: [
+      'img/14/front.jpeg',
+      'img/14/back.jpeg',
+    ],
+    15: [
+      'img/15/front.jpeg',
+      'img/15/back.jpeg',
+    ],
+    16: [
+      'img/16/front.jpeg',
+      'img/16/back.jpeg',
+    ],
+    17: [
+      'img/17/front.jpeg',
+      'img/17/back.jpeg',
+    ],
+    18: [
+      'img/18/front.jpeg',
+      'img/18/back.jpeg',
+    ],
+    19: [
+      'img/19/front.jpeg',
+      'img/19/back.jpeg',
+    ],
+    20: [
+      'img/20/front.jpeg',
+      'img/20/back.jpeg',
+    ],
+    21: [
+      'img/21/front.jpeg',
+      'img/21/back.jpeg',
+      'img/21/folded.jpeg',
+    ],
+    22: [
+      'img/22/front.jpeg',
+      'img/22/back.jpeg',
+    ],
+    23: [
+      'img/23/front.jpeg',
+      'img/23/back.jpeg',
+    ],
+    24: [
+      'img/24/front.jpeg',
+      'img/24/back.jpeg',
     ]
 };
 
