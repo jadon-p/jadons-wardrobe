@@ -180,8 +180,8 @@ function loadProducts(){
     loadProductCard("7","img/7/thumbnail.jpeg", "H. Brothers Pants", "$25", "Second-hand Black Polyester Pants <br> Size: 82 Stretch Skinny");
     loadProductCard("8","img/8/thumbnail.jpeg", "Ralph Lauren Polo", "$50", "Vintage Second-hand Plaid Polo <br> Size: L");
     loadProductCard("9","img/9/thumbnail.jpeg", "David Taylor Polo", "$25", "Brand New Blue Polo <br> Size: L");
-    loadProductCard("10","img/10/thumbnail.jpeg", "Ralph Lauren Pants", "$60", "Vintage Brand New Cotton Polo <br> Size: L");
-    loadProductCard("11","img/11/thumbnail.jpeg", "Cooper Hawk Polo Shirt", "$30", "Second-hand Green Denim Pants <br> Size: 32 W 32 L");
+    loadProductCard("10","img/10/thumbnail.jpeg", "Ralph Lauren Pants", "$60", "Second-hand Green Denim Pants <br> Size: 32 W 32 ");
+    loadProductCard("11","img/11/thumbnail.jpeg", "Cooper Hawk Polo Shirt", "$30", "Vintage Brand New Cotton Polo <br> Size: L");
     loadProductCard("12","img/12/thumbnail.jpeg", "Adidas Trefoil Hoodie", "$45", "Second-hand Maroon Hoodie <br> Size: L");
     /*loadProductCard("13","img/13/thumbnail.jpeg", "Adidas Pants", "$30", "Second-Hand Black Sweatpants <br> Size: L");
     loadProductCard("14","img/14/thumbnail.jpeg", "Adidas Hoodie", "$30", "Second-hand Blue Hoodie <br> Size: M");
