@@ -174,7 +174,6 @@ function loadProducts(){
     loadProductCard("1","img/1/thumbnail.jpeg", "Vintage Polo Shirt", "$35", "Second-hand Spiderman Polo <br> Size: L");
     loadProductCard("2","img/2/thumbnail.jpeg", "T.M. Lewin Pants", "$40", "Second-hand Navy Blue Cotton Pants <br> Size: 32S");
     loadProductCard("3","img/3/thumbnail.jpeg", "Vintage Nautica Polo", "$25", "Brand New Gray Polo <br> Size: L");
-    loadProductCard("4","img/4/thumbnail.jpeg", "Vintage Florida Sweater", "$40", "Second-hand Grey Sweater <br> Size: XL");
     loadProductCard("5","img/5/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$50", "Second-hand Black Hoodie <br> Size: M");
     loadProductCard("6","img/6/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$75", "Brand New White Hoodie <br> Size: M");
     loadProductCard("7","img/7/thumbnail.jpeg", "H. Brothers Pants", "$25", "Second-hand Black Polyester Pants <br> Size: 82 Stretch Skinny");
@@ -192,7 +191,6 @@ function loadProducts(){
     loadProductCard("19","img/19/thumbnail.jpeg", "Grand Slam Polo", "$30", "Vintage Gray Polo <br> Size: L");
     loadProductCard("20","img/20/thumbnail.jpeg", "Hollister T-shirt", "$20", "Second-hand Navy Long Sleeve <br> Size: L");
     loadProductCard("21","img/21/thumbnail.jpeg", "New Balance Pants", "$30", "Second-hand Black Sweatpants <br> Size: L");
-    loadProductCard("22","img/22/thumbnail.jpeg", "San Jose Hoodie", "$30", "Second-hand Red Hoodie <br> Size: L");
     loadProductCard("23","img/23/thumbnail.jpeg", "T.H Long Sleeve", "$20", "Second-hand Red/Navy Long Sleeve <br> Size: M");
     loadProductCard("24","img/24/thumbnail.jpeg", "Zara Jacket", "$20", "Second-hand Olive Green Jacket <br> Size: L"); */
 }
