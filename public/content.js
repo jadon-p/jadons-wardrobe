@@ -171,18 +171,18 @@ function loadProducts(){
     product_container.id = "product-container";
     document.getElementById('app').appendChild(product_container);
 
-    loadProductCard("1","img/1/thumbnail.jpeg", "Vintage Polo Shirt", "$35", "Second-hand Spiderman Polo <br> Size: L");
-    loadProductCard("2","img/2/thumbnail.jpeg", "T.M. Lewin Pants", "$40", "Second-hand Navy Blue Cotton Pants <br> Size: 32S");
-    loadProductCard("3","img/3/thumbnail.jpeg", "Vintage Nautica Polo", "$25", "Brand New Gray Polo <br> Size: L");
-    loadProductCard("5","img/5/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$50", "Second-hand Black Hoodie <br> Size: M");
-    loadProductCard("6","img/6/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$75", "Brand New White Hoodie <br> Size: M");
-    loadProductCard("7","img/7/thumbnail.jpeg", "H. Brothers Pants", "$25", "Second-hand Black Polyester Pants <br> Size: 82 Stretch Skinny");
-    loadProductCard("8","img/8/thumbnail.jpeg", "Ralph Lauren Polo", "$50", "Vintage Second-hand Plaid Polo <br> Size: L");
-    loadProductCard("9","img/9/thumbnail.jpeg", "David Taylor Polo", "$25", "Brand New Blue Polo <br> Size: L");
+    loadProductCard("1","img/1/thumbnail.jpeg", "Vintage Polo Shirt", "$30", "Second-hand Spiderman Polo <br> Size: L");
+    loadProductCard("2","img/2/thumbnail.jpeg", "T.M. Lewin Pants", "$35", "Second-hand Navy Blue Cotton Pants <br> Size: 32S");
+    loadProductCard("3","img/3/thumbnail.jpeg", "Vintage Nautica Polo", "$20", "Brand New Gray Polo <br> Size: L");
+    //loadProductCard("5","img/5/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$50", "Second-hand Black Hoodie <br> Size: M");
+    loadProductCard("6","img/6/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$70", "Brand New White Hoodie <br> Size: M");
+    loadProductCard("7","img/7/thumbnail.jpeg", "H. Brothers Pants", "$20", "Second-hand Black Polyester Pants <br> Size: 82 Stretch Skinny");
+    loadProductCard("8","img/8/thumbnail.jpeg", "Ralph Lauren Polo", "$45", "Vintage Second-hand Plaid Polo <br> Size: L");
+    loadProductCard("9","img/9/thumbnail.jpeg", "David Taylor Polo", "$20", "Brand New Blue Polo <br> Size: L");
     loadProductCard("10","img/10/thumbnail.jpeg", "Ralph Lauren Pants", "$60", "Second-hand Green Denim Pants <br> Size: 32 W 32 ");
-    loadProductCard("11","img/11/thumbnail.jpeg", "Cooper Hawk Polo Shirt", "$30", "Vintage Brand New Cotton Polo <br> Size: L");
-    loadProductCard("12","img/12/thumbnail.jpeg", "Adidas Trefoil Hoodie", "$45", "Second-hand Maroon Hoodie <br> Size: L");
-    /*loadProductCard("13","img/13/thumbnail.jpeg", "Adidas Pants", "$30", "Second-Hand Black Sweatpants <br> Size: L");
+    loadProductCard("11","img/11/thumbnail.jpeg", "Cooper Hawk Polo Shirt", "$25", "Vintage Brand New Cotton Polo <br> Size: L");
+    loadProductCard("12","img/12/thumbnail.jpeg", "Adidas Trefoil Hoodie", "$40", "Second-hand Maroon Hoodie <br> Size: L");
+    loadProductCard("13","img/13/thumbnail.jpeg", "Adidas Pants", "$30", "Second-Hand Black Sweatpants <br> Size: L");
     loadProductCard("14","img/14/thumbnail.jpeg", "Adidas Hoodie", "$30", "Second-hand Blue Hoodie <br> Size: M");
     loadProductCard("15","img/15/thumbnail.jpeg", "California Hoodie", "$40", "Second-hand Navy Hoodie <br> Size: L");
     loadProductCard("16","img/16/thumbnail.jpeg", "Converse T-Shirt", "$20", "Second-hand White Long Sleeve <br> Size: M");
@@ -192,7 +192,7 @@ function loadProducts(){
     loadProductCard("20","img/20/thumbnail.jpeg", "Hollister T-shirt", "$20", "Second-hand Navy Long Sleeve <br> Size: L");
     loadProductCard("21","img/21/thumbnail.jpeg", "New Balance Pants", "$30", "Second-hand Black Sweatpants <br> Size: L");
     loadProductCard("23","img/23/thumbnail.jpeg", "T.H Long Sleeve", "$20", "Second-hand Red/Navy Long Sleeve <br> Size: M");
-    loadProductCard("24","img/24/thumbnail.jpeg", "Zara Jacket", "$20", "Second-hand Olive Green Jacket <br> Size: L"); */
+    loadProductCard("24","img/24/thumbnail.jpeg", "Zara Jacket", "$20", "Second-hand Olive Green Jacket <br> Size: L"); 
 }
 
 function loadProductCard(id,img_src, name, price, desc){
