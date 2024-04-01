@@ -48,8 +48,8 @@ body{
 .fade {
     animation-name: fade;
     animation-duration: 1s;
-  }
-  
+} 
+
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
@@ -146,6 +146,11 @@ html {
         height:100vh;
         width:50vw;
     }
+    
+    .loginDiv{
+        height:95vh;
+        margin-top:5vw;
+    }
 
     .modal-content{
         width: 28vw;
@@ -167,7 +172,6 @@ html {
 
     .navbar{
         font-size:3vw;
-        height:5vw;
     }
 
     .navbar a {
@@ -253,6 +257,10 @@ html {
         max-width:175px
     }
 
+    .navbar{
+        font-size: 2vw;
+    }
+
     #product-container{
         grid-template-columns: 1fr 1fr;
     }
@@ -266,6 +274,25 @@ html {
     .modal-content {
         width: 25vw;
     }
+}
+
+.loginDiv{
+    height:95vh;
+    animation: fadeIn 5s;
+}
+
+#loginBtnDiv{
+    width:100%;
+    text-align: center;
+    height:25vh;
+}
+
+#loginDescDiv{
+    height:35vh;
+}
+
+#loginTitleContainer{
+    height: 35vh;
 }
 
 .modal {
@@ -357,6 +384,13 @@ html {
     top: 0;
     width: 100%;
     z-index: 1000;
+    transition: 0.5s;
+}
+
+.navbar.scrolled {
+    background-color: #121212;;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .navbar a {
@@ -434,8 +468,8 @@ html {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-}
-  
+} 
+
 .productCard button:hover {
     opacity: 0.7;
 }
@@ -489,11 +523,11 @@ html {
     max-width: 300px;
     color:#ffffff
 }
-  
+
 .profile-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-  
+
 .profile-card-container {
     padding: 2px 16px;
 }
@@ -520,7 +554,11 @@ html {
         align-items: center;
         display: grid;
     }
-   
+
+    #contBtn, #proBtn, #loginBtn {
+        display: none;
+    }
+
     h1{
         font-size: 8vh;
         text-align:center;
@@ -566,10 +604,17 @@ html {
         width:100vw;
     }
 
-    #contBtn, #proBtn {
-        display: none;
+    .loginDiv{
+        margin-top:5vh;
     }
-    
+
+    #loginTitleContainer{
+        height: 35vh;
+        align-items: center;
+        display: grid;
+        text-align: center;
+    }
+
     .modal-content{
         width: 80%;
         max-width:480px;
@@ -590,7 +635,6 @@ html {
 
     .navbar{
         font-size: 3vh;
-        height:5vh;
     }
 
     .navbar a {
