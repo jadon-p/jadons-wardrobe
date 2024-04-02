@@ -6,8 +6,8 @@ function googleLogin(){
         const user = result.user;
         if (checkLogin){
             document.getElementById("desc").innerText = "LOGIN SUCCESSFUL";
-            document.getElementById("productBtn").innerText = "Continue to Products";
-            document.getElementById("productBtn").href = "javascript:resetPage(\"products\")";
+            document.getElementById("loginBtn").innerText = "Continue to Products";
+            document.getElementById("loginBtn").href = "javascript:resetPage(\"products\")";
             loadAccount();
         }
     })
@@ -33,10 +33,10 @@ function loadAccount(){
         account.href = "javascript:openNewContent(\'account\')";
         account.id = "accountTab";
 
-        var accountNav = document.getElementById("loginBtn");
+        var accountNav = document.getElementById("loginNav");
         accountNav.innerText = "Account";
         accountNav.href = "javascript:openNewContent(\'account\')";
-        accountNav.id = "accountBtn";
+        accountNav.id = "accountNav";
 
     }
 }
@@ -73,9 +73,9 @@ function userChange(){
     login.href = "javascript:openNewContent(\'login\')";
     login.id = "loginTab";   
 
-    var loginNav = document.getElementById("accountBtn");
+    var loginNav = document.getElementById("accountNav");
     loginNav.innerText = "Login";
     loginNav.href = "javascript:openNewContent(\'login\')";
-    loginNav.id = "loginBtn";
+    loginNav.id = "loginNav";
 }
 

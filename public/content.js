@@ -83,7 +83,8 @@ function loadAccountPage(){
     div.append(accountBtnDiv);
 
     var signOutBtn = document.createElement("a");
-    signOutBtn.id = "productBtn";
+    signOutBtn.id = "signOutBtn";
+    signOutBtn.className = "customBtn";
     signOutBtn.innerHTML = "Log out";
     signOutBtn.href = "javascript:userSignOut()";
     accountBtnDiv.append(signOutBtn);
@@ -91,7 +92,8 @@ function loadAccountPage(){
     accountBtnDiv.append("<br>");
 
     var deleteBtn = document.createElement("a");
-    deleteBtn.id = "productBtn";
+    deleteBtn.id = "deleteBtn";
+    deleteBtn.className = "customBtn";
     deleteBtn.innerHTML = "Delete Account";
     deleteBtn.href = "javascript:deleteUser()";
     accountBtnDiv.append(deleteBtn);
@@ -184,7 +186,8 @@ function loadLoginPage(){
     div.append(loginBtnDiv);
 
     var loginButton = document.createElement("a");
-    loginButton.id = "productBtn";
+    loginButton.id = "loginBtn";
+    loginButton.className = "customBtn";
     loginButton.innerHTML = "Login with Google";
     loginButton.href = "javascript:googleLogin()";
     loginBtnDiv.append(loginButton);
@@ -233,7 +236,6 @@ function loadMotive(){
     motive_container.append(card);
     motive_container.append(motiveTextDiv);
 
-    /*Footer*/
     var motiveButtonDiv = document.createElement("div");
     motiveButtonDiv.className = "motiveBtnDiv";
 
@@ -241,7 +243,7 @@ function loadMotive(){
     productButton.id = "productBtn";
     productButton.innerHTML = "View Products";
     productButton.href = "javascript:resetPage('products')";
-    productButton.className = "motiveBtn";
+    productButton.className = "customBtn";
 
     var center2 = document.createElement("div");
     center2.className = "center";
@@ -410,6 +412,7 @@ function loadProductTitleDiv(){
     var productButton = document.createElement('a');
     productButton.innerHTML = "Scroll to Products";
     productButton.id = "productBtn";
+    productButton.className = "customBtn";
     productButton.href = "javascript:scrollToElement(\'product-container\',15)";
     productBtnDiv.append(productButton);
     productDiv.append(productBtnDiv);
@@ -433,7 +436,7 @@ function loadTitle(){
     var motiveButton = document.createElement("a");
     motiveButton.innerHTML = "WHY DOES THIS EXIST?";
     motiveButton.href = "javascript:scrollToElement(\'motive\',65)";
-    motiveButton.className = "motiveBtn";
+    motiveButton.className = "customBtn";
 
     titleDiv.append(motiveButton);
     
