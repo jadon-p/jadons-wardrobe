@@ -18,6 +18,9 @@ function loadContent(contentType){
         case "login":
             loadLoginPage();
             break;
+        case "account":
+            loadAccountPage();
+            break;
         default:
             break;
     }
@@ -48,6 +51,52 @@ function generateProductDesc(){
     var line5 = "• There are no refunds or exchanges<br>";
     var line6 = "• Sizes are as accurate as possible<br>";
     return line1 + line2 + line3 + line4 + line5 + line6;
+}
+
+function loadAccountPage(){
+    var div = document.createElement("div");
+    div.className = "accountDiv";
+
+    var titleContainer = document.createElement("div");
+    titleContainer.id = "accountTitleContainer";
+    div.append(titleContainer);
+
+    var title = document.createElement("h5");
+    title.innerText = "ACCOUNT";
+    titleContainer.append(title);
+    document.getElementById('app').appendChild(div);
+
+    var welcomeMsgDiv = document.createElement("div");
+    welcomeMsgDiv.id = "welcomeMsgDiv";
+    div.append(welcomeMsgDiv);
+    
+    var welcomeMsg = document.createElement("h6");
+    welcomeMsg.innerText = "Welcome "+ firebase.auth().currentUser.displayName + "!\nYour saved products are below:";
+    welcomeMsgDiv.append(welcomeMsg);
+
+    var savedProductsDiv = document.createElement("div");
+    savedProductsDiv.id = "savedProducts";
+    div.append(savedProductsDiv);
+
+    var accountBtnDiv = document.createElement("div");
+    accountBtnDiv.id = "accountBtnDiv";
+    div.append(accountBtnDiv);
+
+    var signOutBtn = document.createElement("a");
+    signOutBtn.id = "productBtn";
+    signOutBtn.innerHTML = "Log out";
+    signOutBtn.href = "javascript:userSignOut()";
+    accountBtnDiv.append(signOutBtn);
+
+    accountBtnDiv.append("<br>");
+
+    var deleteBtn = document.createElement("a");
+    deleteBtn.id = "productBtn";
+    deleteBtn.innerHTML = "Delete Account";
+    deleteBtn.href = "javascript:deleteUser()";
+    accountBtnDiv.append(deleteBtn);
+
+    document.getElementById('app').appendChild(div);
 }
 
 function loadContactPage(){
@@ -126,6 +175,7 @@ function loadLoginPage(){
     div.append(loginDescDiv);
 
     var description = document.createElement("h6");
+    description.id = "desc";
     description.innerText = "What features do I get?\n• Save the products you want\n• Get updates on new products\n• Yea thats about it ngl";
     loginDescDiv.append(description);
 
@@ -382,7 +432,7 @@ function loadTitle(){
 
     var motiveButton = document.createElement("a");
     motiveButton.innerHTML = "WHY DOES THIS EXIST?";
-    motiveButton.href = "javascript:scrollToElement(\'motive\',)";
+    motiveButton.href = "javascript:scrollToElement(\'motive\',65)";
     motiveButton.className = "motiveBtn";
 
     titleDiv.append(motiveButton);

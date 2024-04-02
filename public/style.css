@@ -1,3 +1,19 @@
+.accountDiv{
+    height:95vh;
+    animation: fadeIn 5s;
+}
+
+#accountBtnDiv{
+    width:100%;
+    text-align: center;
+    height:25vh;
+
+}
+
+#accountTitleContainer{
+    height: 35vh;
+}
+
 body{ 
     margin:0;
     background-color: #121212;
@@ -81,6 +97,10 @@ html {
 }
 
 @media only screen and (orientation: landscape) {
+    .accountDiv{
+        margin-top:5vw;
+    }
+
     .close {
         font-size:5vw;
     }
@@ -358,7 +378,7 @@ html {
 
 .motive-container{
     display: grid;
-    height:65vh;
+    height:60vh;
     color: #ffffff;
 }
 
@@ -533,6 +553,17 @@ html {
 }
 
 @media only screen and (orientation: portrait) {
+    .accountDiv{
+        margin-top:5vh;
+    }
+
+    #accountTitleContainer{
+        height: 35vh;
+        align-items: center;
+        display: grid;
+        text-align: center;
+    }
+
     .close {
         font-size:5vh;
     }
@@ -708,6 +739,10 @@ html {
     #product-container{
         grid-template-columns: 1fr 1fr;
     }
+}
+
+#savedProducts{
+    min-height: 300px;
 }
 
 /* Slideshow container */
