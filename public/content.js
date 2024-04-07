@@ -15,6 +15,13 @@ function loadContent(contentType){
         case "contact":
             loadContactPage();
             break;
+        case "login":
+            loadLoginPage();
+            break;
+        case "account":
+            loadAccountPage();
+            showSavedProducts("savedProducts");
+            break;
         default:
             break;
     }
@@ -45,6 +52,174 @@ function generateProductDesc(){
     var line5 = "• There are no refunds or exchanges<br>";
     var line6 = "• Sizes are as accurate as possible<br>";
     return line1 + line2 + line3 + line4 + line5 + line6;
+}
+
+async function generateBtns(id, div){
+    div.style.animation = "fadeIn 3s";
+    const idExists = await checkProduct(id);
+    if (idExists || !idExists) { //Used to sync the code appearance
+        var prevBtn = document.createElement("button");
+        prevBtn.id = "prevBtn";
+        prevBtn.onclick = function() {
+            prevImage(id);
+        };
+        prevBtn.innerHTML = "<";
+            div.append(prevBtn);
+    }
+
+    var saveBtn = document.createElement("button");
+    saveBtn.id = "saveBtn";
+    if (idExists){
+        saveBtn.innerHTML = "Saved";
+    } else {
+        saveBtn.innerHTML = "Save";
+    }
+    saveBtn.onclick = function (){
+        if (saveBtn.textContent == "Save"){
+            saveProduct(id);
+            saveBtn.innerHTML = "Saved";
+        } else {
+            removeProduct(id);
+            saveBtn.innerHTML = "Save";
+        }
+    }
+    div.append(saveBtn);
+    
+    if (idExists || !idExists) { //Used to sync the code appearance
+        var nextBtn = document.createElement("button");
+        nextBtn.id = "nextBtn";
+        nextBtn.onclick = function() {
+            nextImage(id);
+        };
+        nextBtn.innerHTML = ">";
+        div.append(nextBtn);
+    }
+}
+
+function getProductCard(id,div){
+    switch (id){
+        case 1:
+            loadProductCard("1","img/1/thumbnail.jpeg", "Vintage Polo Shirt", "$30", "Second-hand Spiderman Polo <br> Size: L", div);
+            break;
+        case 2:
+            loadProductCard("2","img/2/thumbnail.jpeg", "T.M. Lewin Pants", "$35", "Second-hand Navy Blue Cotton Pants <br> Size: 32S",div);
+            break;
+        case 3:
+            loadProductCard("3","img/3/thumbnail.jpeg", "Vintage Nautica Polo", "$20", "Brand New Gray Polo <br> Size: L",div);
+            break;
+        case 4:
+            //loadProductCard("4","img/4/thumbnail.jpeg", "Vintage Florida Sweater", "$40", "Second-hand Grey Sweater <br> Size: XL",div);
+            break;
+        case 5:
+            //loadProductCard("5","img/5/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$50", "Second-hand Black Hoodie <br> Size: M",div);
+            break;
+        case 6:
+            loadProductCard("6","img/6/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$70", "Brand New White Hoodie <br> Size: M",div);
+            break;
+        case 7:
+            //loadProductCard("7","img/7/thumbnail.jpeg", "H. Brothers Pants", "$20", "Second-hand Black Polyester Pants <br> Size: 82 Stretch Skinny",div);
+            break;
+        case 8:
+            loadProductCard("8","img/8/thumbnail.jpeg", "Ralph Lauren Polo", "$45", "Vintage Second-hand Plaid Polo <br> Size: L",div);
+            break;
+        case 9:
+            loadProductCard("9","img/9/thumbnail.jpeg", "David Taylor Polo", "$20", "Brand New Blue Polo <br> Size: L",div);
+            break;
+        case 10:
+            loadProductCard("10","img/10/thumbnail.jpeg", "Ralph Lauren Pants", "$60", "Second-hand Green Denim Pants <br> Size: 32 W 32 ",div);
+            break;
+        case 11:
+            loadProductCard("11","img/11/thumbnail.jpeg", "Cooper Hawk Polo Shirt", "$25", "Vintage Brand New Cotton Polo <br> Size: L",div);
+            break;
+        case 12:
+            loadProductCard("12","img/12/thumbnail.jpeg", "Adidas Trefoil Hoodie", "$40", "Second-hand Maroon Hoodie <br> Size: L",div);
+            break;
+        case 13:
+            loadProductCard("13","img/13/thumbnail.jpeg", "Adidas Pants", "$30", "Second-Hand Black Sweatpants <br> Size: L",div);
+            break;
+        case 14:
+            loadProductCard("14","img/14/thumbnail.jpeg", "Adidas Hoodie", "$30", "Second-hand Blue Hoodie <br> Size: M",div);
+            break;
+        case 15:
+            loadProductCard("15","img/15/thumbnail.jpeg", "California Hoodie", "$40", "Second-hand Navy Hoodie <br> Size: L",div);
+            break;
+        case 16:
+            loadProductCard("16","img/16/thumbnail.jpeg", "Converse T-Shirt", "$20", "Second-hand White Long Sleeve <br> Size: M",div);
+            break;
+        case 17:
+            loadProductCard("17","img/17/thumbnail.jpeg", "Gap Athletic", "$20", "Second-hand Maroon Long Sleeve <br> Size: M",div);
+            break;
+        case 18:
+            loadProductCard("18","img/18/thumbnail.jpeg", "Giordano T-shirt", "$15", "Brand New White T-shirt <br> Size: L",div);
+            break;
+        case 19:
+            loadProductCard("19","img/19/thumbnail.jpeg", "Grand Slam Polo", "$30", "Vintage Gray Polo <br> Size: L",div);
+            break;
+        case 20:
+            loadProductCard("20","img/20/thumbnail.jpeg", "Hollister T-shirt", "$20", "Second-hand Navy Long Sleeve <br> Size: L",div);
+            break;
+        case 21:
+            loadProductCard("21","img/21/thumbnail.jpeg", "New Balance Pants", "$30", "Second-hand Black Sweatpants <br> Size: L",div);
+            break;
+        case 22:
+            //loadProductCard("22","img/22/thumbnail.jpeg", "San Jose Hoodie", "$30", "Second-hand Red Hoodie <br> Size: L",div);
+            break;
+        case 23:
+            loadProductCard("23","img/23/thumbnail.jpeg", "T.H Long Sleeve", "$20", "Second-hand Red/Navy Long Sleeve <br> Size: M",div);
+            break;
+        case 24:
+            loadProductCard("24","img/24/thumbnail.jpeg", "Zara Jacket", "$20", "Second-hand Olive Green Jacket <br> Size: L",div); 
+            break;
+        default:
+            break;
+    }
+}
+
+function loadAccountPage(){
+    var div = document.createElement("div");
+    div.className = "accountDiv";
+
+    var titleContainer = document.createElement("div");
+    titleContainer.id = "accountTitleContainer";
+    div.append(titleContainer);
+
+    var title = document.createElement("h5");
+    title.innerText = "ACCOUNT";
+    titleContainer.append(title);
+    document.getElementById('app').appendChild(div);
+
+    var welcomeMsgDiv = document.createElement("div");
+    welcomeMsgDiv.id = "welcomeMsgDiv";
+    div.append(welcomeMsgDiv);
+    
+    var welcomeMsg = document.createElement("h6");
+    welcomeMsg.innerText = "Welcome "+ firebase.auth().currentUser.displayName + "!\nYour saved products are below:";
+    welcomeMsgDiv.append(welcomeMsg);
+
+    var savedProductsDiv = document.createElement("div");
+    savedProductsDiv.id = "savedProducts";
+    div.append(savedProductsDiv);
+
+    var accountBtnDiv = document.createElement("div");
+    accountBtnDiv.id = "accountBtnDiv";
+    div.append(accountBtnDiv);
+
+    var signOutBtn = document.createElement("a");
+    signOutBtn.id = "signOutBtn";
+    signOutBtn.className = "customBtn";
+    signOutBtn.innerHTML = "Log out";
+    signOutBtn.href = "javascript:userSignOut()";
+    signOutBtn.style.marginRight = "20px";
+    accountBtnDiv.append(signOutBtn);
+
+    var deleteBtn = document.createElement("a");
+    deleteBtn.id = "deleteBtn";
+    deleteBtn.className = "customBtn";
+    deleteBtn.innerHTML = "Delete Account";
+    deleteBtn.href = "javascript:deleteUser()";
+    accountBtnDiv.append(deleteBtn);
+
+    document.getElementById('app').appendChild(div);
 }
 
 function loadContactPage(){
@@ -106,6 +281,44 @@ function loadContactPage(){
     document.getElementById('app').appendChild(contactDiv);
 }
 
+function loadLoginPage(){
+    var div = document.createElement("div");
+    div.className = "loginDiv";
+
+    var titleContainer = document.createElement("div");
+    titleContainer.id = "loginTitleContainer";
+    div.append(titleContainer);
+    
+    var title = document.createElement("h5");
+    title.innerText = "LOGIN";
+    titleContainer.append(title);
+
+    var loginDescDiv = document.createElement("div");
+    loginDescDiv.id = "loginDescDiv";
+    div.append(loginDescDiv);
+
+    var description = document.createElement("h6");
+    description.id = "desc";
+    description.innerText = "What features do I get?\n• Save the products you want\n• Get updates on new products\n• Yea thats about it ngl";
+    loginDescDiv.append(description);
+
+    var loginBtnDiv = document.createElement("div");
+    loginBtnDiv.id = "loginBtnDiv";
+    div.append(loginBtnDiv);
+
+    var loginButton = document.createElement("a");
+    loginButton.id = "loginBtn";
+    loginButton.className = "customBtn";
+    loginButton.innerHTML = "Login with Google";
+    loginButton.href = "javascript:googleLogin()";
+    loginBtnDiv.append(loginButton);
+    document.getElementById('app').appendChild(div);
+
+    var script = document.createElement("script");
+    script.src = "account.js";
+    document.getElementById('app').appendChild(script);
+}
+
 function loadMotive(){
     /*Title */
     var motive_container = document.createElement("div");
@@ -144,7 +357,6 @@ function loadMotive(){
     motive_container.append(card);
     motive_container.append(motiveTextDiv);
 
-    /*Footer*/
     var motiveButtonDiv = document.createElement("div");
     motiveButtonDiv.className = "motiveBtnDiv";
 
@@ -152,7 +364,7 @@ function loadMotive(){
     productButton.id = "productBtn";
     productButton.innerHTML = "View Products";
     productButton.href = "javascript:resetPage('products')";
-    productButton.className = "motiveBtn";
+    productButton.className = "customBtn";
 
     var center2 = document.createElement("div");
     center2.className = "center";
@@ -171,31 +383,15 @@ function loadProducts(){
     product_container.id = "product-container";
     document.getElementById('app').appendChild(product_container);
 
-    loadProductCard("1","img/1/thumbnail.jpeg", "Vintage Polo Shirt", "$30", "Second-hand Spiderman Polo <br> Size: L");
-    loadProductCard("2","img/2/thumbnail.jpeg", "T.M. Lewin Pants", "$35", "Second-hand Navy Blue Cotton Pants <br> Size: 32S");
-    loadProductCard("3","img/3/thumbnail.jpeg", "Vintage Nautica Polo", "$20", "Brand New Gray Polo <br> Size: L");
-    //loadProductCard("5","img/5/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$50", "Second-hand Black Hoodie <br> Size: M");
-    loadProductCard("6","img/6/thumbnail.jpeg", "Tommy Hilfiger Hoodie", "$70", "Brand New White Hoodie <br> Size: M");
-    loadProductCard("7","img/7/thumbnail.jpeg", "H. Brothers Pants", "$20", "Second-hand Black Polyester Pants <br> Size: 82 Stretch Skinny");
-    loadProductCard("8","img/8/thumbnail.jpeg", "Ralph Lauren Polo", "$45", "Vintage Second-hand Plaid Polo <br> Size: L");
-    loadProductCard("9","img/9/thumbnail.jpeg", "David Taylor Polo", "$20", "Brand New Blue Polo <br> Size: L");
-    loadProductCard("10","img/10/thumbnail.jpeg", "Ralph Lauren Pants", "$60", "Second-hand Green Denim Pants <br> Size: 32 W 32 ");
-    loadProductCard("11","img/11/thumbnail.jpeg", "Cooper Hawk Polo Shirt", "$25", "Vintage Brand New Cotton Polo <br> Size: L");
-    loadProductCard("12","img/12/thumbnail.jpeg", "Adidas Trefoil Hoodie", "$40", "Second-hand Maroon Hoodie <br> Size: L");
-    loadProductCard("13","img/13/thumbnail.jpeg", "Adidas Pants", "$30", "Second-Hand Black Sweatpants <br> Size: L");
-    loadProductCard("14","img/14/thumbnail.jpeg", "Adidas Hoodie", "$30", "Second-hand Blue Hoodie <br> Size: M");
-    loadProductCard("15","img/15/thumbnail.jpeg", "California Hoodie", "$40", "Second-hand Navy Hoodie <br> Size: L");
-    loadProductCard("16","img/16/thumbnail.jpeg", "Converse T-Shirt", "$20", "Second-hand White Long Sleeve <br> Size: M");
-    loadProductCard("17","img/17/thumbnail.jpeg", "Gap Athletic", "$20", "Second-hand Maroon Long Sleeve <br> Size: M");
-    loadProductCard("18","img/18/thumbnail.jpeg", "Giordano T-shirt", "$15", "Brand New White T-shirt <br> Size: L");
-    loadProductCard("19","img/19/thumbnail.jpeg", "Grand Slam Polo", "$30", "Vintage Gray Polo <br> Size: L");
-    loadProductCard("20","img/20/thumbnail.jpeg", "Hollister T-shirt", "$20", "Second-hand Navy Long Sleeve <br> Size: L");
-    loadProductCard("21","img/21/thumbnail.jpeg", "New Balance Pants", "$30", "Second-hand Black Sweatpants <br> Size: L");
-    loadProductCard("23","img/23/thumbnail.jpeg", "T.H Long Sleeve", "$20", "Second-hand Red/Navy Long Sleeve <br> Size: M");
-    loadProductCard("24","img/24/thumbnail.jpeg", "Zara Jacket", "$20", "Second-hand Olive Green Jacket <br> Size: L"); 
+    let x = 1;
+    while(x <= 24){
+        getProductCard(x,"product-container");
+        x++;
+    }
+
 }
 
-function loadProductCard(id,img_src, name, price, desc){
+function loadProductCard(id,img_src, name, price, desc, div){
     var card = document.createElement("div");
     card.className = "productCard";
 
@@ -233,7 +429,7 @@ function loadProductCard(id,img_src, name, price, desc){
     
     card.append(cardBtn);
 
-    document.getElementById("product-container").appendChild(card);
+    document.getElementById(div).appendChild(card);
 }
 
 function loadProductModal(id){
@@ -265,26 +461,28 @@ function loadProductModal(id){
     var btnDiv = document.createElement("div");
     btnDiv.className = "modalBtnDiv";
 
-    var prevBtn = document.createElement("button");
-    prevBtn.id = "prevBtn";
-    prevBtn.onclick = function() {
-        prevImage(id);
-    };
-    prevBtn.innerHTML = "<";
-    btnDiv.append(prevBtn);
+    if (document.getElementById("accountNav")){
+        generateBtns(id,btnDiv);
+    } else {
+        var prevBtn = document.createElement("button");
+        prevBtn.id = "prevBtn";
+        prevBtn.onclick = function() {
+            prevImage(id);
+        }
+        prevBtn.innerHTML = "<";
+        btnDiv.append(prevBtn);
 
-    var rightBtnDiv = document.createElement("div");
-    rightBtnDiv.className = "right";
+        var div = document.createElement("div");
+        btnDiv.append(div);
 
-    var nextBtn = document.createElement("button");
-    nextBtn.id = "nextBtn";
-    nextBtn.onclick = function() {
-        nextImage(id);
-    };
-    nextBtn.innerHTML = ">";
-
-    rightBtnDiv.append(nextBtn);
-    btnDiv.append(rightBtnDiv);
+        var nextBtn = document.createElement("button");
+        nextBtn.id = "nextBtn";
+        nextBtn.onclick = function() {
+            nextImage(id);
+        }
+        nextBtn.innerHTML = ">";
+        btnDiv.append(nextBtn);
+    }
 
     modal_content.append(btnDiv);
 
@@ -319,6 +517,7 @@ function loadProductTitleDiv(){
     var productButton = document.createElement('a');
     productButton.innerHTML = "Scroll to Products";
     productButton.id = "productBtn";
+    productButton.className = "customBtn";
     productButton.href = "javascript:scrollToElement(\'product-container\',15)";
     productBtnDiv.append(productButton);
     productDiv.append(productBtnDiv);
@@ -341,8 +540,8 @@ function loadTitle(){
 
     var motiveButton = document.createElement("a");
     motiveButton.innerHTML = "WHY DOES THIS EXIST?";
-    motiveButton.href = "javascript:scrollToElement(\'motive\',15)";
-    motiveButton.className = "motiveBtn";
+    motiveButton.href = "javascript:scrollToElement(\'motive\',65)";
+    motiveButton.className = "customBtn";
 
     titleDiv.append(motiveButton);
     

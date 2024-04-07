@@ -1,3 +1,17 @@
+.accountDiv{
+    animation: fadeIn 5s;
+}
+
+#accountBtnDiv{
+    justify-content: center;
+    display: flex;
+    padding-bottom: 25px;
+}
+
+#accountTitleContainer{
+    height: 35vh;
+}
+
 body{ 
     margin:0;
     background-color: #121212;
@@ -44,12 +58,26 @@ body{
     font-style: normal;
 }
 
+.customBtn {
+    background-color: #1AACEA;
+    color:#ffffff;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.customBtn:hover {
+    background-color: #ffffff;
+    color:#1AACEA;
+}
+
 /* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 1s;
-  }
-  
+} 
+
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
@@ -58,6 +86,10 @@ body{
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+#homeNav{
+    animation: fadeIn 0.5s;
 }
 
 h1, h5, h6, h7{
@@ -81,6 +113,10 @@ html {
 }
 
 @media only screen and (orientation: landscape) {
+    .accountDiv{
+        margin-top:5vw;
+    }
+
     .close {
         font-size:5vw;
     }
@@ -95,6 +131,11 @@ html {
         display:grid;
         height:95vh;
         width:100vw;
+    }
+
+    .customBtn{
+        padding: 15px 25px;
+        font-size: 2.5vw;
     }
 
     h1{
@@ -146,6 +187,11 @@ html {
         height:100vh;
         width:50vw;
     }
+    
+    .loginDiv{
+        height:95vh;
+        margin-top:5vw;
+    }
 
     .modal-content{
         width: 28vw;
@@ -160,30 +206,20 @@ html {
         font-size:1.8vw;
     }
 
-    .motiveBtn{
-        padding: 15px 25px;
-        font-size: 2.5vw;
-    }
-
     .navbar{
         font-size:3vw;
-        height:5vw;
     }
 
     .navbar a {
         padding: 1vw 1vw;
     }
 
-    #nextBtn, #prevBtn {
+    #nextBtn, #prevBtn, #saveBtn {
         font-size:4vw;
     }
 
     #openOverlayBtn {
         display: none;
-    }
-
-    #productBtn{
-        font-size: 2.5vw;
     }
 
     #product-container{
@@ -206,6 +242,10 @@ html {
 
     .profile-card {
         width:45%;
+    }
+
+    #savedProducts{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .titleDiv{
@@ -253,7 +293,15 @@ html {
         max-width:175px
     }
 
+    .navbar{
+        font-size: 2vw;
+    }
+
     #product-container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #savedProducts{
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -266,6 +314,24 @@ html {
     .modal-content {
         width: 25vw;
     }
+}
+
+.loginDiv{
+    animation: fadeIn 5s;
+}
+
+#loginBtnDiv{
+    width:100%;
+    text-align: center;
+    height:25vh;
+}
+
+#loginDescDiv{
+    height:35vh;
+}
+
+#loginTitleContainer{
+    height: 35vh;
 }
 
 .modal {
@@ -293,34 +359,16 @@ html {
 }
 
 .modalBtnDiv{
-    float:left;
+    display:grid;
     width: 100%;
-    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
     z-index: 1;
-}
-
-.modalBtnDiv .right{
-    float:right;
 }
 
 .modal-image {
     width: 100%;
     height: auto;
     transition: opacity 0.5s ease-in-out;
-}
-
-.motiveBtn {
-    background-color: #1AACEA;
-    color:#ffffff;
-    text-decoration: none;
-    transition-duration: 0.4s;
-    border-radius: 15px;
-    font-weight: bold;
-}
-
-.motiveBtn:hover {
-    background-color: #ffffff;
-    color:#1AACEA;
 }
 
 .motiveBtnDiv{
@@ -331,7 +379,7 @@ html {
 
 .motive-container{
     display: grid;
-    height:65vh;
+    height:60vh;
     color: #ffffff;
 }
 
@@ -357,6 +405,13 @@ html {
     top: 0;
     width: 100%;
     z-index: 1000;
+    transition: 0.5s;
+}
+
+.navbar.scrolled {
+    background-color: #121212;;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .navbar a {
@@ -375,7 +430,7 @@ html {
     float: right;
 }
 
-#nextBtn, #prevBtn {
+#nextBtn, #prevBtn, #saveBtn {
     color:#ffffff;
     transition-duration: 0.4s;
     border-radius: 15px;
@@ -385,7 +440,7 @@ html {
     background-color: rgba(0, 0, 0, 0);
 }
 
-#nextBtn:hover, #prevBtn:hover {
+#nextBtn:hover, #prevBtn:hover, #saveBtn:hover {
     color:#1AACEA;
 }
 
@@ -434,30 +489,14 @@ html {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-}
-  
+} 
+
 .productCard button:hover {
     opacity: 0.7;
 }
 
-
-#productBtn{
-    color:#1AACEA;
-    background-color: #ffffff;
-    text-decoration: none;
-    transition-duration: 0.4s;
-    padding:10px 15px;
-    border-radius: 15px;
-    font-weight: bold;
-}
-
 #productDiv{
     animation: fadeIn 5s;
-}
-
-#productBtn:hover{
-    background-color: #1AACEA;
-    color:#ffffff;
 }
 
 #productBtnDiv{
@@ -489,16 +528,31 @@ html {
     max-width: 300px;
     color:#ffffff
 }
-  
+
 .profile-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-  
+
 .profile-card-container {
     padding: 2px 16px;
 }
 
 @media only screen and (orientation: portrait) {
+    .accountDiv{
+        margin-top:5vh;
+    }
+
+    #accountNav, #contNav, #proNav, #loginNav {
+        display: none;
+    }
+
+    #accountTitleContainer{
+        height: 35vh;
+        align-items: center;
+        display: grid;
+        text-align: center;
+    }
+
     .close {
         font-size:5vh;
     }
@@ -520,7 +574,12 @@ html {
         align-items: center;
         display: grid;
     }
-   
+
+    .customBtn {
+        padding:12px 7px;
+        font-size: 3vh;
+    }
+
     h1{
         font-size: 8vh;
         text-align:center;
@@ -566,10 +625,17 @@ html {
         width:100vw;
     }
 
-    #contBtn, #proBtn {
-        display: none;
+    .loginDiv{
+        margin-top:5vh;
     }
-    
+
+    #loginTitleContainer{
+        height: 35vh;
+        align-items: center;
+        display: grid;
+        text-align: center;
+    }
+
     .modal-content{
         width: 80%;
         max-width:480px;
@@ -583,21 +649,15 @@ html {
         font-size:1.8vh;
     }
 
-    .motiveBtn {
-        padding:12px 7px;
-        font-size: 3vh;
-    }
-
     .navbar{
         font-size: 3vh;
-        height:5vh;
     }
 
     .navbar a {
         padding: 1vh 2vh;
     }
 
-    #nextBtn, #prevBtn {
+    #nextBtn, #prevBtn, #saveBtn {
         font-size:6vh;
     }
 
@@ -649,6 +709,10 @@ html {
         width:50%;
     }
 
+    #savedProducts{
+        grid-template-rows: 1fr;
+    }
+
     .titleDiv{
         width: 100vw;
         height:50vh;
@@ -664,6 +728,16 @@ html {
     #product-container{
         grid-template-columns: 1fr 1fr;
     }
+}
+
+#savedProducts{
+    min-height: 300px;
+    display: grid;
+    margin: auto;
+    grid-gap: 25px;
+    width:90vw;
+    padding-top:25px;
+    padding-bottom:25px;
 }
 
 /* Slideshow container */
