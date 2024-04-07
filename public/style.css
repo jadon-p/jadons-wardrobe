@@ -1,13 +1,11 @@
 .accountDiv{
-    height:95vh;
     animation: fadeIn 5s;
 }
 
-#accountbtnDiv{
-    width:100%;
-    text-align: center;
-    height:25vh;
-
+#accountBtnDiv{
+    justify-content: center;
+    display: flex;
+    padding-bottom: 25px;
 }
 
 #accountTitleContainer{
@@ -216,7 +214,7 @@ html {
         padding: 1vw 1vw;
     }
 
-    #nextBtn, #prevBtn {
+    #nextBtn, #prevBtn, #saveBtn {
         font-size:4vw;
     }
 
@@ -244,6 +242,10 @@ html {
 
     .profile-card {
         width:45%;
+    }
+
+    #savedProducts{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .titleDiv{
@@ -296,6 +298,10 @@ html {
     }
 
     #product-container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #savedProducts{
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -353,14 +359,10 @@ html {
 }
 
 .modalBtnDiv{
-    float:left;
+    display:grid;
     width: 100%;
-    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
     z-index: 1;
-}
-
-.modalBtnDiv .right{
-    float:right;
 }
 
 .modal-image {
@@ -428,7 +430,7 @@ html {
     float: right;
 }
 
-#nextBtn, #prevBtn {
+#nextBtn, #prevBtn, #saveBtn {
     color:#ffffff;
     transition-duration: 0.4s;
     border-radius: 15px;
@@ -438,7 +440,7 @@ html {
     background-color: rgba(0, 0, 0, 0);
 }
 
-#nextBtn:hover, #prevBtn:hover {
+#nextBtn:hover, #prevBtn:hover, #saveBtn:hover {
     color:#1AACEA;
 }
 
@@ -540,6 +542,10 @@ html {
         margin-top:5vh;
     }
 
+    #accountNav, #contNav, #proNav, #loginNav {
+        display: none;
+    }
+
     #accountTitleContainer{
         height: 35vh;
         align-items: center;
@@ -567,10 +573,6 @@ html {
         text-align: center;
         align-items: center;
         display: grid;
-    }
-
-    #contNav, #proNav, #loginNav {
-        display: none;
     }
 
     .customBtn {
@@ -655,7 +657,7 @@ html {
         padding: 1vh 2vh;
     }
 
-    #nextBtn, #prevBtn {
+    #nextBtn, #prevBtn, #saveBtn {
         font-size:6vh;
     }
 
@@ -707,6 +709,10 @@ html {
         width:50%;
     }
 
+    #savedProducts{
+        grid-template-rows: 1fr;
+    }
+
     .titleDiv{
         width: 100vw;
         height:50vh;
@@ -726,6 +732,12 @@ html {
 
 #savedProducts{
     min-height: 300px;
+    display: grid;
+    margin: auto;
+    grid-gap: 25px;
+    width:90vw;
+    padding-top:25px;
+    padding-bottom:25px;
 }
 
 /* Slideshow container */
